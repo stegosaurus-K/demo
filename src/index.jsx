@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux'
 import './index.less';
-import App from './App';
+/* REDUX */
+import { Provider } from 'react-redux';
 import store from './store';
+
+import App from './App';
 /* 响应式布局: 改变REM换算比例 */
 import 'lib-flexible';
 

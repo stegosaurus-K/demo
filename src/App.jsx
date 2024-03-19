@@ -7,7 +7,7 @@ import actions from "./store/action";
 
 function App(props) {
     const { query, items: iconItems } = props; // 从store容器中结构出 状态 和 派发的方法
-    const [advanced, setAdvanced] = useState(true);  // 控制‘高级版’高亮
+    const [advanced, setAdvanced] = useState(true);  // 控制‘高级版’高亮, 默认先展示高级版
     const [ordered, setOrdered] = useState(false);   // 控制‘定制版’高亮
     const [items, setItems] = useState([]);  // 保存图标信息
 
@@ -37,7 +37,7 @@ function App(props) {
         </div>
         <Divider style={{
             borderWidth: '4px',
-            marginTop: '2px'
+            marginTop: '4px'
         }} />
         <div className="sub-items">
             <div className="title">
