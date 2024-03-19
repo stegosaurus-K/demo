@@ -1,0 +1,80 @@
+.header-box {
+    display: flex;
+    justify-content: space-around;
+
+    // 公共样式
+    .highlight-box,
+    .unhighlight-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 340px;
+        height: 340px;
+
+        .advanced {
+            font-size: 40px;
+        }
+
+        .desc {
+            font-size: 24px;
+
+        }
+    }
+
+    .highlight-box {
+        border: 2px solid rgba(235, 195, 186);
+        background-color: rgba(254, 249, 246);
+
+        .advanced {
+            color: rgba(238, 93, 100);
+        }
+
+        .desc {
+            color: rgba(236, 156, 155);
+        }
+
+    }
+
+    .unhighlight-box {
+        border: 2px solid rgba(239, 239, 239);
+        background-color: rgba(246, 246, 246);
+
+        .advanced {
+            color: rgba(52, 52, 52);
+        }
+
+        .desc {
+            color: rgba(180, 180, 180);
+        }
+    }
+}
+
+.sub-items {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        height: 60px;
+        font-size: 40px;
+        line-height: 60px;
+        margin: 20px 0 0 20px;
+    }
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+
+    }
+
+    .desc {
+        font-size: 24px;
+        margin-left: 14px;
+    }
+
+    .sub-desc {
+        color: rgba(218, 130, 137);
+    }
+}
