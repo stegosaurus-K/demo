@@ -5,7 +5,7 @@ import './index.less';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import App from './App';
+import Home from './views/Home';
 /* 响应式布局: 改变REM换算比例 */
 import 'lib-flexible';
 
@@ -26,6 +26,6 @@ import 'lib-flexible';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
+    <Home />
   </Provider>
 );

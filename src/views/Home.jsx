@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Divider } from 'antd-mobile';
-import Icon from "./components/Icon";
-import NavBar from "./components/NavBar";
+import Icon from "../components/Icon";
+import NavBar from "../components/NavBar";
 import { connect } from 'react-redux';
-import actions from "./store/action";
+import actions from "../store/action";
 
-function App(props) {
-    const { query, items: iconItems } = props; // 从store容器中结构出 状态 和 派发的方法
+function Home(props) {
+    const { queryData, items: iconItems } = props; // 从store容器中结构出 状态 和 派发的方法
     const [advanced, setAdvanced] = useState(true);  // 控制‘高级版’高亮, 默认先展示高级版
     const [ordered, setOrdered] = useState(false);   // 控制‘定制版’高亮
     const [items, setItems] = useState([]);  // 保存图标信息
 
     useEffect(() => {
-        query(); // 首次渲染完毕后执行派发的方法
-        setItems(iconItems); // 更新icon数据
-    }, [query, iconItems]);
+        queryData(); // 首次渲染完毕后执行派发的方法请求数据
+        setItems(iconItems); // 请求数据后更新icon
+    }, [iconItems, queryData]);
 
     /* 控制点击定制版/高级版显示 */
     const handle = (advanced, ordered) => {
-        // advanced 和 ordered 必定互逆
         setAdvanced(advanced);
         setOrdered(ordered);
     }
@@ -62,4 +61,4 @@ function App(props) {
         </div>
     </>
 }
-export default connect(state => state, actions)(App);
+export default connect(state => state, actions)(Home);

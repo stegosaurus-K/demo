@@ -5,14 +5,17 @@ import './Icon.less';
 function Icon(props) {
     let { item, advanced, ordered } = props;
     const { title, version, content } = item;
+
     const handle = (className) => {
-        if (className === 'unhighlight-icon') return;  // 如果图标不是高亮的，就无法点击
+        if (className === 'unhighlight-icon') return;  // 如果图标不是高亮的，点击不了
         Dialog.alert({
             title: version + '-' + title,
             content: content,
             bodyClassName: 'dialog'
         })
     }
+
+    /* 根据传过来的 advanced 和 ordered 来判断图标高亮与否*/
     let className;
     if (advanced) {
         className = version === '高级版' ? 'highlight-icon' : 'unhighlight-icon'
