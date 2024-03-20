@@ -4,6 +4,7 @@ import Icon from "../components/Icon";
 import NavBar from "../components/NavBar";
 import { connect } from 'react-redux';
 import actions from "../store/action";
+import './Home.less'
 
 function Home(props) {
     const { queryData, items: iconItems } = props; // 从store容器中结构出 状态 和 派发的方法
